@@ -9,7 +9,7 @@
             &:hover {
                 // 대메뉴 항목에 마우스를 올렸을 때 소메뉴 노출
                 ul {
-                    display: block; /* 소메뉴를 표시 */
+                    height: 80px;        /*  display: block; 소메뉴를 표시  */
                 }
             }
             .gnb_d1_a {
@@ -21,7 +21,13 @@
                 min-width: 80px; /* 소메뉴의 최소 너비를 80px로 설정하여 너무 좁아지지 않도록 함 */
                 white-space: nowrap; /* 소메뉴 항목이 줄 바꿈 없이 한 줄로 표시되도록 설정 */
                 background-color: black !important; /* 소메뉴의 배경색을 검정색으로 설정, 중요도 높음 */
-                display: none; /* 기본적으로 소메뉴를 표시하지 않음 */
+                /* display: none;  기본적으로 소메뉴를 표시하지 않음 */
+                height: 0;
+                transition: height 0.5s;
+                overflow: hidden;
+                padding: 0 1rem !important;
+                border: 0 !important;
+
                 &.leftul {
                     left: -2rem; /* leftul 클래스가 적용된 소메뉴의 위치를 왼쪽으로 2rem 이동 */
                 }
