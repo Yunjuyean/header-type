@@ -1,38 +1,37 @@
-#hd{
-    a{
-        text-decoration: none;
+#hd {
+    a {
+        text-decoration: none; /* 링크의 밑줄 제거 */
     }
-    .gnb{
-        .d1{
-            //대메뉴 li
+    .gnb {
+        .d1 {
+            // 대메뉴 li
 
-            &:hover{
-                //대메뉴의 롤오버시 소메뉴 노출
-                ul{
-                    display: block;
+            &:hover {
+                // 대메뉴 항목에 마우스를 올렸을 때 소메뉴 노출
+                ul {
+                    display: block; /* 소메뉴를 표시 */
                 }
             }
-            .gnb_d1_a{
-               font-size: 1.2em;
-               color:black;
+            .gnb_d1_a {
+                font-size: 1.2em; /* 대메뉴 링크의 글꼴 크기 설정 */
+                color: black; /* 대메뉴 링크의 글꼴 색상 설정 */
             }
-            ul{
-                //소메뉴
-                min-width: 80px;
-                white-space: nowrap;
-                background-color: black !important;
-                display: none;
-                &.leftul{
-                    left:-2rem;
-                }               
-                li{
-                    a{
-                        font-size: 0.85rem;
-                        color:white !important;
+            ul {
+                // 소메뉴
+                min-width: 80px; /* 소메뉴의 최소 너비를 80px로 설정하여 너무 좁아지지 않도록 함 */
+                white-space: nowrap; /* 소메뉴 항목이 줄 바꿈 없이 한 줄로 표시되도록 설정 */
+                background-color: black !important; /* 소메뉴의 배경색을 검정색으로 설정, 중요도 높음 */
+                display: none; /* 기본적으로 소메뉴를 표시하지 않음 */
+                &.leftul {
+                    left: -2rem; /* leftul 클래스가 적용된 소메뉴의 위치를 왼쪽으로 2rem 이동 */
+                }
+                li {
+                    a {
+                        font-size: 0.85rem; /* 소메뉴 링크의 글꼴 크기 설정 */
+                        color: white !important; /* 소메뉴 링크의 글꼴 색상을 흰색으로 설정, 중요도 높음 */
                     }
                 }
             }
-
         }
     }
 }
