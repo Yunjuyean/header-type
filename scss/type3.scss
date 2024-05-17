@@ -62,79 +62,147 @@
 //     }
 // }
 
-a {
-    text-decoration: none;
-    color: black;
-}
+// a {
+//     text-decoration: none;
+//     color: black;
+// }
 
-#hd {
-    .h1,
-    .iconMenu {
-        width: 0;
+// #hd {
+//     .h1,
+//     .iconMenu {
+//         width: 0;
+//     }
+//     h1 {
+//         a {
+//             white-space: nowrap;
+//         }
+//     }
+//     .gnb {
+//         .gnb_li {
+//             position: relative; /* 하위 메뉴의 절대 위치를 위한 상대 위치 설정 */
+//             &:hover {
+//                 .gnb_a {
+//                     color: red; /* 활성화 */
+//                 }
+//                 .gnb_ul {
+//                     max-height: 180px;
+//                     animation: slideDown 0.5s ease-out forwards, roundCorners 0.5s ease-out 0.5s forwards;
+//                     border-left: 1px solid #ccc; /* 왼쪽 테두리 추가 */
+//                     border-right: 1px solid #ccc; /* 오른쪽 테두리 추가 */
+//                     border-bottom: 1px solid #ccc;
+//                 }
+//             }
+//             .gnb_a {
+//                 font-size: 1.2rem;
+//             }
+//             .gnb_ul {
+//                 position: absolute;
+//                 min-width: 10rem;
+//                 background-color: white;
+//                 margin-top: -1px; /* 부모 요소와 겹치지 않도록 조정 */
+//                 border-left: 1px solid #ccc; /* 왼쪽 테두리 추가 */
+//                 border-right: 1px solid #ccc; /* 오른쪽 테두리 추가 */
+//                 border-top: 0; /* 상단 테두리 제거 */
+//                 overflow: hidden;
+//                 transform: translateX(-50%);
+//                 left: calc(50% + 10px); /* 서브메뉴의 왼쪽 간격을 조정 */
+//                 max-height: 0;
+//                 transition: max-height 0.5s ease-out, border-radius 0.5s ease-out 0.5s; /* 둥근 모서리 애니메이션 추가 */
+
+//                 &:after,
+//                 &:before {
+//                     content: "";
+//                     display: block;
+//                     height: 1rem;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @keyframes slideDown {
+//     from {
+//         max-height: 0;
+//     }
+//     to {
+//         max-height: 180px;
+//     }
+// }
+
+// @keyframes roundCorners {
+//     from {
+//         border-radius: 0;
+//     }
+//     to {
+//         border-bottom-left-radius: 30px;
+//         border-bottom-right-radius: 30px;
+//     }
+// }
+
+#hd{
+    position: relative;
+    h1,
+    .iconMenu{
+        width: 0
     }
-    h1 {
-        a {
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    h1{
+        a{
             white-space: nowrap;
         }
     }
     .gnb {
-        .gnb_li {
-            position: relative; /* 하위 메뉴의 절대 위치를 위한 상대 위치 설정 */
-            &:hover {
-                .gnb_a {
-                    color: red; /* 활성화 */
-                }
-                .gnb_ul {
-                    max-height: 180px;
-                    animation: slideDown 0.5s ease-out forwards, roundCorners 0.5s ease-out 0.5s forwards;
-                    border-left: 1px solid #ccc; /* 왼쪽 테두리 추가 */
-                    border-right: 1px solid #ccc; /* 오른쪽 테두리 추가 */
-                    border-bottom: 1px solid #ccc;
-                }
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0; right: 0;
+            top: 100%;
+            height: 0;
+            transition: 0.5s;
+            background-color: rgba(255,255,255,.5);
+        }
+        &:hover{
+            &::before{
+                height: 180px;
             }
-            .gnb_a {
-                font-size: 1.2rem;
-            }
-            .gnb_ul {
-                position: absolute;
-                min-width: 10rem;
-                background-color: white;
-                margin-top: -1px; /* 부모 요소와 겹치지 않도록 조정 */
-                border-left: 1px solid #ccc; /* 왼쪽 테두리 추가 */
-                border-right: 1px solid #ccc; /* 오른쪽 테두리 추가 */
-                border-top: 0; /* 상단 테두리 제거 */
-                overflow: hidden;
-                transform: translateX(-50%);
-                left: calc(50% + 10px); /* 서브메뉴의 왼쪽 간격을 조정 */
-                max-height: 0;
-                transition: max-height 0.5s ease-out, border-radius 0.5s ease-out 0.5s; /* 둥근 모서리 애니메이션 추가 */
-
-                &:after,
-                &:before {
-                    content: "";
-                    display: block;
-                    height: 1rem;
+            .gnb_li{
+                &:hover{
+                    .gnb_a {
+                    color: red; //활성화
+                    }
+                }
+                .gnb_ul{
+                    height: 180px;
                 }
             }
         }
     }
-}
-
-@keyframes slideDown {
-    from {
-        max-height: 0;
+        .gnb_li{
+            padding:0 45px !important;
+        .gnb_a {
+            font-size: 1.2rem;
+        }
+        .gnb_ul{
+            min-width: 10rem;
+            overflow: hidden;
+            height: 0px;
+            transition: 0.5s;
+            left: 35px;
+            text-align: center;
+            &:after,
+            &:before{
+                content: "";
+                display: block;
+                height: 1rem;
+            }
+        }
     }
-    to {
-        max-height: 180px;
-    }
-}
-
-@keyframes roundCorners {
-    from {
-        border-radius: 0;
-    }
-    to {
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
+    .iconMenu {
+        i {
+            white-space: nowrap;
+        }
     }
 }
