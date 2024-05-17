@@ -139,15 +139,15 @@
 //     }
 // }
 
+a{
+    text-decoration: none;
+    color: black;
+}
 #hd{
     position: relative;
     h1,
     .iconMenu{
-        width: 0
-    }
-    a {
-        color: black;
-        text-decoration: none;
+        width:0;
     }
     h1{
         a{
@@ -155,54 +155,49 @@
         }
     }
     .gnb {
-        &::before{
+        &:before{
             content: "";
             position: absolute;
-            left: 0; right: 0;
-            top: 100%;
-            height: 0;
+            left:0; right:0;
+            top:100%;
+            height:0;
             transition: 0.5s;
-            background-color: rgba(255,255,255,.5);
+            background-color: rgba(255,255,255,.8);
         }
         &:hover{
-            &::before{
-                height: 180px;
+            &:before{
+                height:180px;
             }
             .gnb_li{
                 &:hover{
                     .gnb_a {
-                    color: red; //활성화
+                        color:red; //활성화
                     }
                 }
                 .gnb_ul{
-                    height: 180px;
+                    height:180px;
                 }
             }
         }
-    }
         .gnb_li{
-            padding:0 45px !important;
-        .gnb_a {
-            font-size: 1.2rem;
-        }
-        .gnb_ul{
-            min-width: 10rem;
-            overflow: hidden;
-            height: 0px;
-            transition: 0.5s;
-            left: 35px;
-            text-align: center;
-            &:after,
-            &:before{
-                content: "";
-                display: block;
-                height: 1rem;
+            padding: 0 35px !important;
+            .gnb_a {
+                font-size: 1.2rem;
             }
-        }
-    }
-    .iconMenu {
-        i {
-            white-space: nowrap;
+            .gnb_ul{
+                min-width:10rem;
+                overflow: hidden;
+                height: 0;
+                transition:  0.5s;
+                left:-35px;
+                text-align: center;
+                &:after,
+                &:before{
+                    content: "";
+                    display: block;
+                    height: 1rem;
+                }
+            }
         }
     }
 }
